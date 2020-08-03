@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, Image, StyleSheet} from 'react-native';
+import {View, Text, Image, StyleSheet, StatusBar} from 'react-native';
 import SwapiService from '../../services/swapi-service';
 
 export default class RandomPlanet extends Component {
@@ -64,6 +64,7 @@ const styles = StyleSheet.create({
     width: 200,
     left: 180,
     paddingTop: 30,
+    padding: 20,
   },
   paramName: {
     fontSize: 16,
@@ -76,13 +77,10 @@ const styles = StyleSheet.create({
     color: 'white',
   },
   container: {
-    borderColor: '#72767a',
-    borderRadius: 4,
-    borderWidth: 1,
-    shadowColor: 'grey',
-    marginTop: 50,
-    margin: 20,
+    marginTop: StatusBar.currentHeight || 0,
+    padding: 20,
     backgroundColor: 'black',
+
   },
   tinyLogo: {
     width: 150,

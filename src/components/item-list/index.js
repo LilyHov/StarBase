@@ -30,7 +30,7 @@ const Item = ({title}) => (
 );
 
 const ItemList = () => {
-    const renderItem = ({item}) => <Item title={item.title}>{item.id}</Item>;
+  const renderItem = ({item}) => <Item title={item.title}>{item.id}</Item>;
 
   return (
     <SafeAreaView style={styles.container}>
