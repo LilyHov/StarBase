@@ -1,5 +1,12 @@
 import React, {Component} from 'react';
-import {View, Text, Image, StyleSheet, StatusBar} from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  Platform,
+  ScrollView,
+} from 'react-native';
 import SwapiService from '../../services/swapi-service';
 
 export default class RandomPlanet extends Component {
@@ -32,7 +39,7 @@ export default class RandomPlanet extends Component {
     } = this.state;
 
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <View style={styles.headerInfo}>
           <Text style={styles.name}>{name}</Text>
           <Image
@@ -50,7 +57,7 @@ export default class RandomPlanet extends Component {
           <Text style={styles.paramName}>Diameter</Text>
           <Text style={styles.paramValue}>{diameter}</Text>
         </View>
-      </View>
+      </ScrollView>
     );
   }
 }
@@ -77,14 +84,13 @@ const styles = StyleSheet.create({
     color: 'white',
   },
   container: {
-    marginTop: StatusBar.currentHeight || 0,
-    padding: 20,
     backgroundColor: 'black',
-
+    padding: 20,
+    marginTop: Platform.OS === 'ios' ? 35 : 0,
+    flex: 1,
   },
   tinyLogo: {
     width: 150,
     height: 150,
-    backgroundColor: 'black',
   },
 });
