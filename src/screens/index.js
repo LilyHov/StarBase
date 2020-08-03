@@ -26,8 +26,7 @@ function MyTabs() {
       initialRouteName="Feed"
       tabBarOptions={{
         activeTintColor: MyTheme.colors.primary,
-      }}
-      theme={MyTheme}>
+      }}>
       <Tab.Screen
         name="Feed"
         component={RandomPlanet}
@@ -62,7 +61,7 @@ let store = createStore(combineReducers({count: '1'}));
 export default function App() {
   return (
     <Provider store={store}>
-      <NavigationContainer>
+      <NavigationContainer theme={MyTheme}>
         <MyTabs />
       </NavigationContainer>
     </Provider>
