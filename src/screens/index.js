@@ -3,20 +3,11 @@ import {Provider} from 'react-redux';
 import {createStore, combineReducers} from 'redux';
 import {NavigationContainer} from '@react-navigation/native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import IonIcons from 'react-native-vector-icons/Ionicons';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import RandomPlanet from '../components/random-planet';
 import ItemList from '../components/item-list';
-
-const MyTheme = {
-  dark: true,
-  colors: {
-    primary: 'rgb(255, 45, 85)',
-    background: 'rgb(28, 28, 30)',
-    text: 'rgb(255, 255, 255)',
-    card: 'rgb(28, 28, 30)',
-    notification: 'rgb(255, 69, 58)',
-  },
-};
+import MyTheme from '../theme';
 
 const Tab = createBottomTabNavigator();
 
@@ -37,20 +28,33 @@ function MyTabs() {
         }}
       />
       <Tab.Screen
-        name="Notifications"
+        name="People"
         component={ItemList}
         options={{
           tabBarIcon: ({color, size}) => (
-            <MaterialCommunityIcons name="bell" color={color} size={size} />
+            <MaterialCommunityIcons name="alien" color={color} size={size} />
           ),
         }}
       />
       <Tab.Screen
-        name="Profile"
+        name="Planets"
         component={RandomPlanet}
         options={{
           tabBarIcon: ({color, size}) => (
-            <MaterialCommunityIcons name="account" color={color} size={size} />
+            <IonIcons name="planet" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Starships"
+        component={RandomPlanet}
+        options={{
+          tabBarIcon: ({color, size}) => (
+            <MaterialCommunityIcons
+              name="star-four-points"
+              color={color}
+              size={size}
+            />
           ),
         }}
       />
