@@ -6,8 +6,10 @@ import {
   StyleSheet,
   Platform,
   ScrollView,
+  Button,
 } from 'react-native';
 import SwapiService from '../../services/swapi-service';
+import PropTypes from 'prop-types';
 
 export default class RandomPlanet extends Component {
   swapiService = new SwapiService();
@@ -67,11 +69,7 @@ const styles = StyleSheet.create({
   },
   headerInfo: {},
   details: {
-    ...StyleSheet.absoluteFillObject,
-    width: 200,
-    left: 180,
-    paddingTop: 30,
-    padding: 20,
+
   },
   paramName: {
     fontSize: 16,
@@ -90,7 +88,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   tinyLogo: {
-    width: 150,
-    height: 150,
+   // width: 250,
+    height: 300,
   },
 });
