@@ -7,10 +7,8 @@ import {
   Text,
   StatusBar,
 } from 'react-native';
-import PropTypes from 'prop-types';
-import PeopleModel from '../../models/PeopleModel';
 
-const ItemList = ({peoples}) => {
+const ItemList = ({data}) => {
   const RenderItem = ({item}) => (
     <View style={styles.item}>
       <Text style={styles.title}>{item.name}</Text>
@@ -20,16 +18,12 @@ const ItemList = ({peoples}) => {
   return (
     <SafeAreaView style={styles.container}>
       <FlatList
-        data={peoples}
+        data={data}
         renderItem={({item}) => <RenderItem item={item} />}
         keyExtractor={(item) => item.id.toString()}
       />
     </SafeAreaView>
   );
-};
-
-ItemList.propTypes = {
-  peoples: PropTypes.arrayOf(PropTypes.instanceOf(PeopleModel)).isRequired,
 };
 
 const styles = StyleSheet.create({

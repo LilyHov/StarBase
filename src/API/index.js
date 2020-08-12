@@ -18,4 +18,14 @@ export default class Api {
       throw new Error('something went wrong');
     }
   }
+
+  static async getAllPlanets() {
+    try {
+      const client = await getClient();
+      const response = await client.get('/planets/');
+      return Middleware.parsePlanets(response.data.results);
+    } catch (e) {
+      throw new Error('something went wrong');
+    }
+  }
 }

@@ -6,10 +6,9 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import IonIcons from 'react-native-vector-icons/Ionicons';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import RandomPlanet from '../components/random-planet';
-import ItemList from '../components/item-list';
 import MyTheme from '../theme';
 import reducer from '../../reducer';
-import People from './Planets';
+import People from './People';
 const Tab = createBottomTabNavigator();
 
 function MyTabs() {
